@@ -1,0 +1,13 @@
+
+TINY COMPILATION: C:\Users\gycbest\Desktop\test.TNY
+   1: b+=c - 3 * a
+
+Syntax tree:
+  Assign to: b
+    Op: +
+      Id: b
+      Op: -
+        Id: c
+        Op: *
+          Const: 3
+          Id: a

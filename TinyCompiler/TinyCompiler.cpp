@@ -195,6 +195,10 @@ void CTinyCompilerApp::OnAppAbout()
 	aboutDlg.DoModal();
 }
 
+void CTinyCompilerApp::PrintSyntaxTree()
+{
+}
+
 
 // CTinyCompilerApp 自定义加载/保存方法
 

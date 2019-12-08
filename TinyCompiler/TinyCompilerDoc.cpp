@@ -12,6 +12,7 @@
 #include "TinyCompilerDoc.h"
 
 #include <propkey.h>
+#include "CMAIN.H"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -149,7 +150,8 @@ void CTinyCompilerDoc::Dump(CDumpContext& dc) const
 void CTinyCompilerDoc::OnBuildSyntaxTree()
 {
 	//GetPathName获取文件路径
-	AfxMessageBox(GetPathName());
+	USES_CONVERSION;
+	cmain(W2A(GetPathName()));
 }
 #endif //_DEBUG
 

@@ -34,6 +34,7 @@ public:
 	virtual void SaveCustomState();
 
 	afx_msg void OnAppAbout();
+	afx_msg void PrintSyntaxTree();
 	DECLARE_MESSAGE_MAP()
 };
 

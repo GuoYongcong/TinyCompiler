@@ -188,7 +188,7 @@
     <ClCompile Include="CGEN.C" />
     <ClCompile Include="ChildFrm.cpp" />
     <ClCompile Include="CODE.C" />
-    <ClCompile Include="MAIN.C" />
+    <ClCompile Include="CMAIN.C" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="PARSE.C" />
     <ClCompile Include="SCAN.C" />
@@ -223,6 +223,7 @@
     <ClInclude Include="ChildFrm.h" />
     <ClInclude Include="CODE.H" />
     <ClInclude Include="GLOBALS.H" />
+    <ClInclude Include="CMAIN.H" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="PARSE.H" />
     <ClInclude Include="Resource.h" />

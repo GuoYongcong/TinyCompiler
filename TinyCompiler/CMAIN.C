@@ -6,7 +6,7 @@
 /****************************************************/
 #pragma warning(disable:4996)
 #include "globals.h"
-
+#include "CMAIN.H"
 /* set NO_PARSE to TRUE to get a scanner-only compiler */
 #define NO_PARSE FALSE
 /* set NO_ANALYZE to TRUE to get a parser-only compiler */
@@ -46,16 +46,16 @@ int TraceCode = FALSE;
 int Error = FALSE;
 
 //main( int argc, char * argv[] )
-main()
+int cmain(char ch[])
 { TreeNode * syntaxTree;
   char pgm[120]; /* source code file name */
   /*if (argc != 2)
     { fprintf(stderr,"usage: %s <filename>\n",argv[0]);
       exit(1);
-    }
-  strcpy(pgm,argv[1]) ;*/
-  printf("Please input source code file name:");
-  scanf("%s",pgm);
+    }*/
+  strcpy(pgm,ch) ;
+  /*printf("Please input source code file name:");
+  scanf("%s",pgm);*/
   if (strchr (pgm, '.') == NULL)
      strcat(pgm,".tny");
   source = fopen(pgm,"r");
@@ -63,7 +63,9 @@ main()
   { fprintf(stderr,"File %s not found\n",pgm);
     exit(1);
   }
-  listing = stdout; /* send listing to screen */
+  //listing = stdout; /* send listing to screen */
+  char outputFileName[30] = "syntaxTree.txt";
+  listing = fopen(outputFileName,"w");
   fprintf(listing,"\nTINY COMPILATION: %s\n",pgm);
 #if NO_PARSE
   while (getToken()!=ENDFILE);
@@ -100,7 +102,7 @@ main()
 #endif
 #endif
   fclose(source);
-  system("pause");
+  fclose(listing);
   return 0;
 }
 
