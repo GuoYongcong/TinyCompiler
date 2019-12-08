@@ -1,6 +1,6 @@
 
 // TinyCompiler.cpp : 定义应用程序的类行为。
-//
+//版本控制测试
 
 #include "stdafx.h"
 #include "afxwinappex.h"
