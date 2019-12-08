@@ -22,6 +22,8 @@
 IMPLEMENT_DYNCREATE(CTinyCompilerDoc, CDocument)
 
 BEGIN_MESSAGE_MAP(CTinyCompilerDoc, CDocument)
+	ON_COMMAND(ID_BUILD_SYNTAX_TREE, &CTinyCompilerDoc::OnBuildSyntaxTree)
+
 END_MESSAGE_MAP()
 
 
@@ -44,7 +46,7 @@ BOOL CTinyCompilerDoc::OnNewDocument()
 
 	// TODO: 在此添加重新初始化代码
 	// (SDI 文档将重用该文档)
-
+	
 	return TRUE;
 }
 
@@ -143,6 +145,11 @@ void CTinyCompilerDoc::AssertValid() const
 void CTinyCompilerDoc::Dump(CDumpContext& dc) const
 {
 	CDocument::Dump(dc);
+}
+void CTinyCompilerDoc::OnBuildSyntaxTree()
+{
+	
+	AfxMessageBox(GetPathName());
 }
 #endif //_DEBUG
 

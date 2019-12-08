@@ -32,6 +32,7 @@ CTinyCompilerView::CTinyCompilerView()
 {
 	// TODO: 在此处添加构造代码
 
+
 }
 
 CTinyCompilerView::~CTinyCompilerView()
@@ -45,8 +46,12 @@ BOOL CTinyCompilerView::PreCreateWindow(CREATESTRUCT& cs)
 
 	BOOL bPreCreated = CEditView::PreCreateWindow(cs);
 	cs.style &= ~(ES_AUTOHSCROLL|WS_HSCROLL);	// 启用换行
-
+	
 	return bPreCreated;
+}
+
+void CTinyCompilerView::OnFilePrintPreview()
+{
 }
 
 void CTinyCompilerView::OnRButtonUp(UINT /* nFlags */, CPoint point)
@@ -61,6 +66,8 @@ void CTinyCompilerView::OnContextMenu(CWnd* /* pWnd */, CPoint point)
 	theApp.GetContextMenuManager()->ShowPopupMenu(IDR_POPUP_EDIT, point.x, point.y, this, TRUE);
 #endif
 }
+
+
 
 
 // CTinyCompilerView 诊断

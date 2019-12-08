@@ -36,7 +36,7 @@ public:
 #endif
 
 protected:
-
+	afx_msg void OnBuildSyntaxTree();
 // 生成的消息映射函数
 protected:
 	DECLARE_MESSAGE_MAP()
