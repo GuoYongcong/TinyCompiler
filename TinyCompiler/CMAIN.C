@@ -46,7 +46,7 @@ int TraceCode = FALSE;
 int Error = FALSE;
 
 //main( int argc, char * argv[] )
-int cmain(char ch[])
+int cmain(char ch[], char output[])
 { TreeNode * syntaxTree;
   char pgm[120]; /* source code file name */
   /*if (argc != 2)
@@ -64,7 +64,8 @@ int cmain(char ch[])
     exit(1);
   }
   //listing = stdout; /* send listing to screen */
-  char outputFileName[30] = "syntaxTree.txt";
+  char outputFileName[120];
+  strcpy(outputFileName, output);
   listing = fopen(outputFileName,"w");
   fprintf(listing,"\nTINY COMPILATION: %s\n",pgm);
 #if NO_PARSE

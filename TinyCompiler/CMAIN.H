@@ -3,7 +3,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-	int cmain(char ch[]);
+	int cmain(char ch[], char output[]);
 
 #ifdef __cplusplus
 }
