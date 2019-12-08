@@ -182,17 +182,25 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ANALYZE.C" />
+    <ClCompile Include="CGEN.C" />
     <ClCompile Include="ChildFrm.cpp" />
+    <ClCompile Include="CODE.C" />
+    <ClCompile Include="MAIN.C" />
     <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="PARSE.C" />
+    <ClCompile Include="SCAN.C" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="SYMTAB.C" />
     <ClCompile Include="TinyCompiler.cpp" />
     <ClCompile Include="TinyCompilerDoc.cpp" />
     <ClCompile Include="TinyCompilerView.cpp" />
+    <ClCompile Include="UTIL.C" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="TinyCompiler.rc" />
@@ -208,14 +216,22 @@
     <None Include="res\TinyCompiler.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ANALYZE.H" />
+    <ClInclude Include="CGEN.H" />
     <ClInclude Include="ChildFrm.h" />
+    <ClInclude Include="CODE.H" />
+    <ClInclude Include="GLOBALS.H" />
     <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="PARSE.H" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="SCAN.H" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="SYMTAB.H" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TinyCompiler.h" />
     <ClInclude Include="TinyCompilerDoc.h" />
     <ClInclude Include="TinyCompilerView.h" />
+    <ClInclude Include="UTIL.H" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
