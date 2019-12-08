@@ -148,7 +148,7 @@ void CTinyCompilerDoc::Dump(CDumpContext& dc) const
 }
 void CTinyCompilerDoc::OnBuildSyntaxTree()
 {
-	
+	//GetPathName获取文件路径
 	AfxMessageBox(GetPathName());
 }
 #endif //_DEBUG
