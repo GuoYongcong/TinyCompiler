@@ -154,26 +154,26 @@ void CTinyCompilerDoc::OnBuildSyntaxTree()
 	USES_CONVERSION;
 	char output[] = "syntaxTree.txt";
 	cmain(W2A(GetPathName()), output);
-	AfxMessageBox(_T("生成语法树成功！"));
 	CString cstr(_T("syntaxTree.txt"));
-	CString strline;//定义一个变量用于接收读取的一行内容
-	CStdioFile file;//定义一个CStdioFile类的对象 file
-	CString doc = _T("");
-	BOOL flag = file.Open(cstr, CFile::modeRead);//open函数需要传两个参数，前一个是文件路径，后一个是文件的打开模式
-	if (flag == FALSE)
-	{
-		AfxMessageBox(_T("文件打开失败！"));
-	}
-	DWORD m_dwPos = 0;
-	file.Seek(m_dwPos, CFile::begin);
-	while (file.ReadString(strline) != FALSE)
-	{
-		doc.Append(strline);
-		doc.Append(_T("\n"));
-	}
-	file.Close();
-	AfxMessageBox(doc);
-}
+	//CString strline;//定义一个变量用于接收读取的一行内容
+	//CStdioFile file;//定义一个CStdioFile类的对象 file
+	//CString doc = _T("");
+	//BOOL flag = file.Open(cstr, CFile::modeRead);//open函数需要传两个参数，前一个是文件路径，后一个是文件的打开模式
+	//if (flag == FALSE)
+	//{
+	//	AfxMessageBox(_T("文件打开失败！"));
+	//}
+	//DWORD m_dwPos = 0;
+	//file.Seek(m_dwPos, CFile::begin);
+	//while (file.ReadString(strline) != FALSE)
+	//{
+	//	doc.Append(strline);
+	//	doc.Append(_T("\n"));
+	//}
+	//file.Close();
+	//AfxMessageBox(doc);
+	GetDocTemplate()->OpenDocumentFile(cstr);
+;}
 #endif //_DEBUG
 
 

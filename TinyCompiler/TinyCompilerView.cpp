@@ -46,7 +46,6 @@ BOOL CTinyCompilerView::PreCreateWindow(CREATESTRUCT& cs)
 
 	BOOL bPreCreated = CEditView::PreCreateWindow(cs);
 	cs.style &= ~(ES_AUTOHSCROLL|WS_HSCROLL);	// ∆Ù”√ªª––
-	
 	return bPreCreated;
 }
 
