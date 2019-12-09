@@ -197,6 +197,7 @@ void CTinyCompilerApp::OnAppAbout()
 
 void CTinyCompilerApp::PrintSyntaxTree()
 {
+	
 }
 
 

@@ -21,7 +21,9 @@ public:
 // 重写
 public:
 	virtual BOOL OnNewDocument();
+	virtual BOOL OnOpenDocument(LPCTSTR lpszPathName);
 	virtual void Serialize(CArchive& ar);
+	virtual BOOL DoSave(LPCTSTR lpszPathName, BOOL bReplace = TRUE);
 #ifdef SHARED_HANDLERS
 	virtual void InitializeSearchContent();
 	virtual void OnDrawThumbnail(CDC& dc, LPRECT lprcBounds);
@@ -36,9 +38,11 @@ public:
 #endif
 
 protected:
-	afx_msg void OnBuildSyntaxTree();
+	char * UnicodeToUTF8(const wchar_t *str);
+	
 // 生成的消息映射函数
 protected:
+	afx_msg void OnBuildSyntaxTree();
 	DECLARE_MESSAGE_MAP()
 
 #ifdef SHARED_HANDLERS

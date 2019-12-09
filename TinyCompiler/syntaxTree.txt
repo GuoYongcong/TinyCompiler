@@ -1,13 +1,11 @@
 
-TINY COMPILATION: C:\Users\gycbest\Desktop\test.TNY
-   1: b+=c - 3 * a
+TINY COMPILATION: C:\Users\gycbest\Desktop\TinyCompiler1.tny
+   1: a
+>>> Syntax error at line 3: unexpected token -> EOF
+      
+>>> Syntax error at line 3: unexpected token -> EOF
 
 Syntax tree:
-  Assign to: b
+  Assign to: a
     Op: +
-      Id: b
-      Op: -
-        Id: c
-        Op: *
-          Const: 3
-          Id: a
+      Id: a
