@@ -151,9 +151,8 @@ void CTinyCompilerDoc::Dump(CDumpContext& dc) const
 void CTinyCompilerDoc::OnBuildSyntaxTree()
 {
 	//GetPathName获取文件路径
-	USES_CONVERSION;
 	char output[] = "syntaxTree.txt";
-	cmain(W2A(GetPathName()), output);
+	cmain((LPSTR)(LPCTSTR)GetPathName(), output);
 	CString cstr(_T("syntaxTree.txt"));
 	//CString strline;//定义一个变量用于接收读取的一行内容
 	//CStdioFile file;//定义一个CStdioFile类的对象 file

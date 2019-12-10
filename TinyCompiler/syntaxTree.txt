@@ -1,13 +1,71 @@
 
 TINY COMPILATION: C:\Users\gycbest\Desktop\test.TNY
-   1: b+=c - 3 * a
+  23: 
+  24: 
+  25: 
+  26: 
+  27: 
+  28: 
+  29: 
+  30: b+=c - 3 * 7;
+
+>>> Syntax error at line 30: unexpected token -> =
+      
+>>> Syntax error at line 30: unexpected token -> =
+
+>>> Syntax error at line 30: unexpected token -> ID, name= c
+      
+>>> Syntax error at line 30: unexpected token -> -
+      
+>>> Syntax error at line 30: unexpected token -> -
+
+>>> Syntax error at line 30: unexpected token -> NUM, val= 3
+      
+>>> Syntax error at line 30: unexpected token -> NUM, val= 3
+
+>>> Syntax error at line 30: unexpected token -> *
+      
+>>> Syntax error at line 30: unexpected token -> *
+
+>>> Syntax error at line 30: unexpected token -> NUM, val= 7
+      
+>>> Syntax error at line 30: unexpected token -> NUM, val= 7
+  31: b+=c - 3 * 7
+
+>>> Syntax error at line 31: unexpected token -> ID, name= b
+      
+>>> Syntax error at line 31: unexpected token -> =
+      
+>>> Syntax error at line 31: unexpected token -> =
+
+>>> Syntax error at line 31: unexpected token -> ID, name= c
+      
+>>> Syntax error at line 31: unexpected token -> -
+      
+>>> Syntax error at line 31: unexpected token -> -
+
+>>> Syntax error at line 31: unexpected token -> NUM, val= 3
+      
+>>> Syntax error at line 31: unexpected token -> NUM, val= 3
+
+>>> Syntax error at line 31: unexpected token -> *
+      
+>>> Syntax error at line 31: unexpected token -> *
+
+>>> Syntax error at line 31: unexpected token -> NUM, val= 7
+      
+>>> Syntax error at line 31: unexpected token -> NUM, val= 7
 
 Syntax tree:
   Assign to: b
     Op: +
       Id: b
-      Op: -
-        Id: c
-        Op: *
-          Const: 3
-          Id: a
+  Assign to: c
+    Op: +
+      Id: c
+  Assign to: b
+    Op: +
+      Id: b
+  Assign to: c
+    Op: +
+      Id: c
