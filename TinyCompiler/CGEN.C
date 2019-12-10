@@ -16,7 +16,7 @@
    It is decremented each time a temp is
    stored, and incremeted when loaded again
 */
-static int tmpOffset = 0;
+int tmpOffset = 0;
 
 /* prototype for internal recursive code generator */
 static void cGen (TreeNode * tree);

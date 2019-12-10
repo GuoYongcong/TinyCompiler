@@ -11,7 +11,7 @@
 #include "analyze.h"
 
 /* counter for variable memory locations */
-static int location = 0;
+int location = 0;
 
 /* Procedure traverse is a generic recursive 
  * syntax tree traversal routine:

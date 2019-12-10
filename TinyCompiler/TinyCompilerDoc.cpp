@@ -91,21 +91,6 @@ void CTinyCompilerDoc::Serialize(CArchive& ar)
 #endif
 }
 
-BOOL CTinyCompilerDoc::DoSave(LPCTSTR lpszPathName, BOOL bReplace)
-{
-	CDocument::DoSave(lpszPathName, bReplace);
-	CStdioFile file;
-	file.Open(GetPathName(), CStdioFile::modeReadWrite);
-	CString strline, doc;
-	while (file.ReadString(strline) != FALSE)
-	{
-		doc.Append(strline);
-		doc.Append(_T("\n"));
-	}
-	AfxMessageBox(doc);
-	file.Close();//关闭对象   
-	return TRUE;
-}
 
 #ifdef SHARED_HANDLERS
 
@@ -171,40 +156,12 @@ void CTinyCompilerDoc::Dump(CDumpContext& dc) const
 {
 	CDocument::Dump(dc);
 }
-char * CTinyCompilerDoc::UnicodeToUTF8(const wchar_t * str)
-{
-	char * result;
-	int textlen;
-	// wide char to multi char
-	textlen = WideCharToMultiByte(CP_UTF8, 0, str, -1, NULL, 0, NULL, NULL);
-	result = (char *)malloc((textlen + 1) * sizeof(char));
-	memset(result, 0, sizeof(char) * (textlen + 1));
-	WideCharToMultiByte(CP_UTF8, 0, str, -1, result, textlen, NULL, NULL);
-	return result;
-}
 void CTinyCompilerDoc::OnBuildSyntaxTree()
 {
 	//GetPathName获取文件路径
 	char output[] = "syntaxTree.txt";
 	cmain((LPSTR)(LPCTSTR)GetPathName(), output);
 	CString cstr(_T("syntaxTree.txt"));
-	//CString strline;//定义一个变量用于接收读取的一行内容
-	//CStdioFile file;//定义一个CStdioFile类的对象 file
-	//CString doc = _T("");
-	//BOOL flag = file.Open(cstr, CFile::modeRead);//open函数需要传两个参数，前一个是文件路径，后一个是文件的打开模式
-	//if (flag == FALSE)
-	//{
-	//	AfxMessageBox(_T("文件打开失败！"));
-	//}
-	//DWORD m_dwPos = 0;
-	//file.Seek(m_dwPos, CFile::begin);
-	//while (file.ReadString(strline) != FALSE)
-	//{
-	//	doc.Append(strline);
-	//	doc.Append(_T("\n"));
-	//}
-	//file.Close();
-	//AfxMessageBox(doc);
 	GetDocTemplate()->OpenDocumentFile(cstr);
 }
 #endif //_DEBUG

@@ -101,4 +101,12 @@ extern int TraceCode;
 
 /* Error = TRUE prevents further passes if an error occurs */
 extern int Error; 
+
+extern int emitLoc;
+extern int highEmitLoc;
+extern int linepos;
+extern int bufsize;
+extern int EOF_flag;
+extern int location;
+extern int tmpOffset;
 #endif

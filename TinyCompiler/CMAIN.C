@@ -104,6 +104,15 @@ int cmain(char ch[], char output[])
 #endif
   fclose(source);
   fclose(listing);
+  lineno = 0;
+  Error = FALSE;
+  emitLoc = 0;
+  highEmitLoc = 0;
+  linepos = 0;
+  bufsize = 0;
+  EOF_flag = FALSE;
+  location = 0;
+  tmpOffset = 0;
   return 0;
 }
 
