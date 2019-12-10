@@ -5,7 +5,7 @@
 #include "stdafx.h"
 // SHARED_HANDLERS 可以在实现预览、缩略图和搜索筛选器句柄的
 // ATL 项目中进行定义，并允许与该项目共享文档代码。
-#ifndef SHARED_HANDLERS
+#ifndef SHARED_HANDLERS 
 #include "TinyCompiler.h"
 #endif
 
@@ -31,7 +31,7 @@ END_MESSAGE_MAP()
 CTinyCompilerView::CTinyCompilerView()
 {
 	// TODO: 在此处添加构造代码
-
+	m_font.CreatePointFont(120, _T("微软雅黑"));
 
 }
 
@@ -49,8 +49,15 @@ BOOL CTinyCompilerView::PreCreateWindow(CREATESTRUCT& cs)
 	return bPreCreated;
 }
 
+
+void CTinyCompilerView::OnInitialUpdate()
+{
+	CEditView::OnInitialUpdate();
+}
+
 void CTinyCompilerView::OnFilePrintPreview()
 {
+	CEditView::OnFilePrintPreview();
 }
 
 void CTinyCompilerView::OnRButtonUp(UINT /* nFlags */, CPoint point)

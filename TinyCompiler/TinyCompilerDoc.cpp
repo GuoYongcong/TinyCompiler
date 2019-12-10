@@ -52,6 +52,13 @@ BOOL CTinyCompilerDoc::OnNewDocument()
 	return TRUE;
 }
 
+BOOL CTinyCompilerDoc::OnOpenDocument(LPCTSTR lpszPathName)
+{
+	if (!CDocument::OnOpenDocument(lpszPathName))
+		return FALSE;
+	return TRUE;
+}
+
 
 
 
@@ -82,6 +89,22 @@ void CTinyCompilerDoc::Serialize(CArchive& ar)
 		}
 	}
 #endif
+}
+
+BOOL CTinyCompilerDoc::DoSave(LPCTSTR lpszPathName, BOOL bReplace)
+{
+	CDocument::DoSave(lpszPathName, bReplace);
+	CStdioFile file;
+	file.Open(GetPathName(), CStdioFile::modeReadWrite);
+	CString strline, doc;
+	while (file.ReadString(strline) != FALSE)
+	{
+		doc.Append(strline);
+		doc.Append(_T("\n"));
+	}
+	AfxMessageBox(doc);
+	file.Close();//关闭对象   
+	return TRUE;
 }
 
 #ifdef SHARED_HANDLERS
@@ -148,6 +171,17 @@ void CTinyCompilerDoc::Dump(CDumpContext& dc) const
 {
 	CDocument::Dump(dc);
 }
+char * CTinyCompilerDoc::UnicodeToUTF8(const wchar_t * str)
+{
+	char * result;
+	int textlen;
+	// wide char to multi char
+	textlen = WideCharToMultiByte(CP_UTF8, 0, str, -1, NULL, 0, NULL, NULL);
+	result = (char *)malloc((textlen + 1) * sizeof(char));
+	memset(result, 0, sizeof(char) * (textlen + 1));
+	WideCharToMultiByte(CP_UTF8, 0, str, -1, result, textlen, NULL, NULL);
+	return result;
+}
 void CTinyCompilerDoc::OnBuildSyntaxTree()
 {
 	//GetPathName获取文件路径
@@ -172,7 +206,7 @@ void CTinyCompilerDoc::OnBuildSyntaxTree()
 	//file.Close();
 	//AfxMessageBox(doc);
 	GetDocTemplate()->OpenDocumentFile(cstr);
-;}
+}
 #endif //_DEBUG
 
 
