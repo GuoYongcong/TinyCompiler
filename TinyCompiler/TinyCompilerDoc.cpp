@@ -158,10 +158,15 @@ void CTinyCompilerDoc::Dump(CDumpContext& dc) const
 }
 void CTinyCompilerDoc::OnBuildSyntaxTree()
 {
+	//修改了但是没有保存，提示是否保存修改
+	if (IsModified())
+		SaveModified();
+	
 	//GetPathName获取文件路径
 	char output[] = "syntaxTree.txt";
 	cmain((LPSTR)(LPCTSTR)GetPathName(), output);
 	CString cstr(_T("syntaxTree.txt"));
+	
 	GetDocTemplate()->OpenDocumentFile(cstr);
 }
 #endif //_DEBUG
